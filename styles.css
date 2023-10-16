@@ -1,0 +1,126 @@
+body {
+    background-color: black;
+    color: green;
+    font-family: monospace;
+    text-align: center;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 5px;
+    grid-row-gap: 15px; /* Increase the gap between rows */
+    margin: 100px auto;
+    width: 300px;
+}
+
+/* Target the gap between the 2nd and 3rd row cells */
+.grid > *:nth-child(5) {
+    margin-top: 30px;
+}
+.grid > *:nth-child(6) {
+    margin-top: 30px;
+}
+.grid > *:nth-child(7) {
+    margin-top: 35px;
+}
+
+.terminal {
+    padding: 10px;
+    border: 1px solid green;
+    width: 80px;
+    height: 60px;
+}
+
+.monitor1, .monitor2 {
+    background-color: black;
+    color: green;
+    padding: 10px;
+    border: 1px solid green;
+}
+
+
+.viewportL {
+    padding: 10px;
+    border: 1px solid green;
+    transform: perspective(85px) rotateY(20deg);
+    transform-origin: 100%;
+    width: 80px; /* Set a fixed width */
+    height: 50px; /* Set a fixed height */
+    z-index: 1; /* Place above the 2nd row cells */
+}
+
+.viewportM {
+    padding: 10px;
+    border: 1px solid green;
+    width: 80px; /* Set a fixed width */
+    height: 50px; /* Set a fixed height */
+}
+
+.viewportR {
+    padding: 10px;
+    border: 1px solid green;
+    transform: perspective(85px) rotateY(-20deg);
+    transform-origin: -10%;
+    width: 80px; /* Set a fixed width */
+    height: 50px; /* Set a fixed height */
+    z-index: 1; /* Place above the 2nd row cells */
+}
+
+.switches {
+    grid-column: span 3; /* Merge 3 columns */
+    padding: 10px;
+    border: 1px solid green;
+    transform: perspective(100px) rotateX(-30deg);
+}
+
+/* Style the input field */
+.user-input {
+    width: 80%;
+    padding: 5px;
+    background-color: black;
+    border: 1px solid green;
+    color: green;
+}
+
+/* Tilt shape for cell G */
+.monitor1 {
+    transform: perspective(100px) rotateY(20deg) rotateZ(-10deg);
+    padding: 10px;
+    border: 1px solid green;
+    transform-origin: 100%;
+    width: 80px;
+    height: 140px;
+}
+
+/* Tilt shape for cell I */
+.monitor2 {
+    transform: perspective(100px) rotateY(-20deg) rotateZ(10deg);
+    padding: 10px;
+    border: 1px solid green;
+    transform-origin: -10%;
+    width: 80px;
+    height: 140px;
+}
+
+/* Style the ERS and ALS buttons */
+.ers-button,
+#abcButton {
+    border: 2px solid green;
+    background-color: black;
+    color: green;
+    cursor: pointer; /* Add a pointer cursor to indicate interactivity */
+}
+
+/* Add hover effect for the buttons */
+.ers-button:hover,
+#abcButton:hover {
+    background-color: green;
+    color: black;
+}
+
+/* Add a class for disabling the hover effect */
+.no-hover {
+    background-color: black !important;
+    color: red !important;
+}
